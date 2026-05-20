@@ -11,6 +11,7 @@ const Login = () => {
 
   const [email ,setEmail ]= useState("abhishek@gmail.com");
   const [password,setPassword]=useState("Mousam@123");
+  const [error,setError]=useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -23,6 +24,7 @@ const handlelogin = async ()=>{
          dispatch(addUser(res.data));
          return navigate("/");
 }catch(err){
+  setError(err?.response?.data || "something went wrong");
   console.error(err);
 }}
   return (
@@ -48,6 +50,7 @@ const handlelogin = async ()=>{
 </fieldset>
    </div>
     <div className="card-actions justify-center">
+      <p className='text-red-400'>{error}</p>
       <button className="btn btn-primary" onClick={handlelogin}>Login</button>
     </div>
   </div>
