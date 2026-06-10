@@ -13,7 +13,7 @@ const Feed = () => {
    const getFeed = async ()=>{
        if  (feed) return ; 
     const res =  await axios.get(BASE_URL + "/feed",{withCredentials: true});
-    console.log("feed data" , res)
+   
     dispatch(addFeed(res?.data));
    }
 
