@@ -15,7 +15,7 @@ const fetchConnections = async () => {
        dispatch(addConnections(res.data.data))
     }
     catch(err){
-
+             console.log(err.message)
     }
 }
 
