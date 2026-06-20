@@ -49,6 +49,7 @@ const handleLogout = async () => {
           </Link>
         </li>
         <li><Link to="/connection">Connections</Link></li>
+            <li><Link to="/requests">Connections Requests</Link></li>
         <li>
           <a onClick={handleLogout}>Logout</a>
           </li>
